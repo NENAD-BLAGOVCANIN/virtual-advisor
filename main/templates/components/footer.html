@@ -1,99 +1,70 @@
 {% load translation_filter %}
 
 <style>
-    footer *{
-        color: white !important;
+    footer {
+        border-top-left-radius: 5rem;
+        border-top-right-radius: 5rem;
     }
 </style>
 
-<footer class="bg-dark mt-5">
+<footer class="bg-white shadow">
     <div class="container-fluid px-0 pt-5 m-0">
         <div class="container py-4">
             <div class="row m-0 p-0 justify-content-center">
                 <div class="col-md-4 mb-md-0 mb-4">
-                    <img src="/static/main/img/favicon.png" style="max-height: 45px;" alt="">
+                    <img src="/static/main/img/favicon.png" style="max-height: 85px;" alt="">
                     <p class="text-secondary py-3">
-                        {{ "A small river named Duden flows by their place and supplies it with the necessary regelialia."|translate:selectedLanguage }}
+                        {{ "Secure AI-powered Knowledge Base Discovery for Corporates"|translate:selectedLanguage }}
                     </p>
-                    <ul class="navbar-nav flex-row d-flex p-0">
-                        <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Twitter"><i
-                                class="fa-brands text-secondary h4 fa-x-twitter"></i></a>
-                        <a href="#" class="px-3" data-bs-toggle="tooltip" data-placement="top" title="Facebook"><i
-                                class="fa-brands text-secondary h4 fa-facebook"></i></a>
-                        <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Instagram"><i
-                                class="fa-brands text-secondary h4 fa-instagram"></i></a>
-                    </ul>
                 </div>
-                <div class="col-md-8">
-                    <div class="row justify-content-center">
-                        <div class="col-md-12 col-lg-9">
-                            <div class="row m-0 p-0">
-                                <div class="col-md-4 mb-md-0 mb-4">
-                                    <h4>{{ "Discover"|translate:selectedLanguage }}</h4>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="#" class="py-1 d-block text-secondary text-decoration-none">
-                                                {{ "Buy & Sell"|translate:selectedLanguage }}
-                                            </a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Merchant</a>
-                                        </li>
-                                        <li><a href="#" class="py-1 d-block text-secondary text-decoration-none">Giving
-                                                back</a></li>
-                                        <li><a href="#" class="py-1 d-block text-secondary text-decoration-none">Help
-                                                &amp; Support</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 mb-md-0 mb-4">
-                                    <h4>About</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Staff</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Team</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Careers</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Blog</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 mb-md-0 mb-4">
-                                    <h4>Resources</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Security</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Global</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Charts</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="py-1 d-block text-secondary text-decoration-none">Privacy</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-4 mb-md-0 mb-4">
+                    <div style="width: fit-content !important;" class="d-block m-auto">
+                        <h4 class="bold">{{ "Quick Links"|translate:selectedLanguage }}</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="py-1 d-block text-secondary text-decoration-none">
+                                    {{ "Home"|translate:selectedLanguage }}
+                                </a>
+                            </li>
+                            <li><a href="#" class="py-1 d-block text-secondary text-decoration-none">
+                                {{ "Features"|translate:selectedLanguage }}</a>
+                            </li>
+                            <li><a href="#" class="py-1 d-block text-secondary text-decoration-none">{{ "Privacy"|translate:selectedLanguage }}</a></li>
+                            <li><a href="#" class="py-1 d-block text-secondary text-decoration-none">
+                                {{ "Blog"|translate:selectedLanguage }}
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-md-0 mb-4">
+                    <div style="width: fit-content !important;" class="d-block m-auto">
+                        <h4 class="bold">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="tel:33613498382" class="py-1 d-block text-secondary text-decoration-none"><i class="fa fa-phone"></i> 33613498382</a>
+                            </li>
+                            <li><a href="mailto:contact@advaise.net" class="py-1 d-block text-secondary text-decoration-none"><i class="fa fa-envelope"></i> contact@advaise.net</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav flex-row d-flex p-0">
+                            <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Twitter"><i
+                                    class="fa-brands text-secondary h4 fa-x-twitter"></i></a>
+                            <a href="#" class="px-3" data-bs-toggle="tooltip" data-placement="top" title="Facebook"><i
+                                    class="fa-brands text-secondary h4 fa-facebook"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" data-placement="top" title="linkedin"><i
+                                    class="fa-brands text-secondary h4 fa-linkedin"></i></a>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container mt-md-5">
+        <div class="container mt-md-5 pb-3">
             <div>
                 <p class="text-center text-secondary m-0">
                     Copyright &copy;
-                    All rights reserved
+                    2024 ADVAISE. All rights reserved.
                 </p>
             </div>
         </div>
     </div>
 </footer>
-
