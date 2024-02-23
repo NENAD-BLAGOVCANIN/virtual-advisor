@@ -61,7 +61,7 @@
             {{ "Empower Your Business with Advanced AI-driven Solutions."|translate:selectedLanguage }}
         </h2>
         <span class="py-3 text-center text-white" style="max-width: 950px;">
-            Quickly and efficiently explore your documents with our intuitive AI solution. Get accurate, instant answers to your most complex questions, and unlock the hidden potential of your data
+            {{ "Quickly and efficiently explore your documents with our intuitive AI solution. Get accurate, instant answers to your most complex questions, and unlock the hidden potential of your data"|translate:selectedLanguage }}
         </span>
 
     </div>
@@ -86,7 +86,7 @@
             <div class="pt-3">
                 <h5>{{ "Hybrid Knowledge Base"|translate:selectedLanguage }}</h5>
                 <span>
-                    Quickly and efficiently explore your documents and get accurate and sourced answers to your most complex questions.
+                    {{ "Quickly and efficiently explore your documents and get accurate and sourced answers to your most complex questions."|translate:selectedLanguage }}
                 </span>
             </div>
             <div class="pt-5">
@@ -128,7 +128,7 @@
             <div class="pt-5">
                 <h5>{{ "Keep full control of your data"|translate:selectedLanguage }}</h5>
                 <span>
-                    Benefit from a secure, non-shared database with the LLM providers. Execution takes place locally on secure dedicated servers.
+                    {{ "Benefit from a secure, non-shared database with the LLM providers. Execution takes place locally on secure dedicated servers."|translate:selectedLanguage }}
                 </span>
             </div>
 
@@ -142,9 +142,9 @@
     {% if not request.user.is_authenticated %}
 
     <div class="rounded-lg bg-primary py-5 d-flex flex-column justify-content-center align-items-center">
-        <h2 class="text-white mb-0">Start Today</h2>
-        <span class="py-4 text-white">Get ahead with collaborative and secure AI</span>
-        <a href="/register" class="btn btn-basic bg-white rounded-lg fw-500">Get Started</a>
+        <h2 class="text-white mb-0">{{ "Start Today"|translate:selectedLanguage }}</h2>
+        <span class="py-4 text-white">{{ "Get ahead with collaborative and secure AI"|translate:selectedLanguage }}</span>
+        <a href="/register" class="btn btn-basic bg-white rounded-lg fw-500">{{ "Start Today"|translate:selectedLanguage }}</a>
     </div>
 
     {% endif %}
