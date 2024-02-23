@@ -80,7 +80,7 @@ def logout_view(request):
 
 
 def set_local_language(request):
-    language = request.POST.get('language', 'en')
+    language = request.POST.get('language', 'fr')
 
     activate(language)
     

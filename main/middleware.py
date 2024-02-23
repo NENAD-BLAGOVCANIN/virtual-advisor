@@ -6,7 +6,7 @@ class LanguageMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        language = request.session.get('django_language', 'en')
+        language = request.session.get('django_language', 'fr')
 
         request.GET = request.GET.copy()
         request.GET['language'] = language
