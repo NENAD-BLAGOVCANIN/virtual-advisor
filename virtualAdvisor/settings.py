@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-or)5tod6^9t_qopn+tyct0hwy!cxd+ea84x6$+_nrlw9ujm+fs
 
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = "main.User"
 
