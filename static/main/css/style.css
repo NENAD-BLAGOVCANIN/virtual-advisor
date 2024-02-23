@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #006585;
+    --color-primary: #433392;
     --color-text: #161618;
     --color-secondary: #717179;
     --color-success: #049f61;
@@ -49,7 +49,39 @@ body {
     background-color: var(--color-primary) !important;
 }
 
-.bg-gray{
+
+.btn-primary-gradient {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(67, 51, 146);
+    background: radial-gradient(circle, rgba(67, 51, 146, 1) 79%, rgba(110, 44, 146, 1) 90%, rgba(154, 38, 146, 1) 100%);
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary-gradient:hover::before {
+    opacity: 0.75;
+}
+
+.btn-primary-gradient span {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+
+.bg-gray {
     background-color: var(--color-gray) !important;
 }
 
@@ -75,18 +107,18 @@ body {
     }
 }
 
-.form-control{
+.form-control {
     border-width: 2px;
     border-radius: 1rem !important;
 }
 
-#navbar-user-icon{
+#navbar-user-icon {
     height: 35px;
     width: 35px;
     border-radius: 50%;
 }
 
-.pointer{
+.pointer {
     cursor: pointer;
 }
 
@@ -101,4 +133,13 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: #a1a1a1;
     border-radius: 2rem
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.check-mark-icon {
+    max-height: 55px;
+    height: 100%;
 }

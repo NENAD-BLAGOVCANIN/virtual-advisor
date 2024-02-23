@@ -6,18 +6,13 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav pe-5">
+
             <li class="nav-item d-flex align-items-center">
-                <a href="/" class="pe-2">
+                <a href="/" class="pe-5">
                     <img src="/static/main/img/logo.png" id="logo-img" alt="">
                 </a>
             </li>
-
-            <div class="align-items-center ps-2 pe-5 d-flex">
-                {% include 'components/language-selector.html' %}
-            </div>
-
-
 
         </ul>
         <ul class="navbar-nav m-auto">
@@ -26,21 +21,22 @@
                 <a class="nav-link {% if request.path == '/' %}active{% else %}{% endif %}" href="/">{{ "Home"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ "Pricing"|translate:selectedLanguage }}</a>
+                <a class="nav-link" href="/features">{{ "Features"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ "About Us"|translate:selectedLanguage }}</a>
+                <a class="nav-link" href="/privacy">{{ "Privacy"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ "Careers"|translate:selectedLanguage }}</a>
+                <a class="nav-link" href="/blog">{{ "Blog"|translate:selectedLanguage }}</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">{{ "Blog"|translate:selectedLanguage }}</a>
-            </li>
-
 
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav nav-right-section">
+
+            <div class="nav-item align-items-center pe-3 d-flex">
+                {% include 'components/language-selector.html' %}
+            </div>
+
             {% if request.user.is_authenticated %}
             <li class="nav-item">
                 <div class="dropdown">
@@ -68,7 +64,11 @@
             </li>
             {% else %}
             <li class="nav-item">
-                <a class="btn btn-primary rounded px-3" href="/register">{{ "Sign up"|translate:selectedLanguage }}</a>
+                <a class="btn btn-primary-gradient rounded px-3" href="/register">
+                    <span>
+                        {{ "Sign up"|translate:selectedLanguage }}
+                    </span>
+                </a>
             </li>
 
             <li class="nav-item">

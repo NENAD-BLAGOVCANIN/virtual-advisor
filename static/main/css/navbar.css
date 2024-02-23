@@ -1,0 +1,12 @@
+@media only screen and (max-width: 991px) {
+    .navbar {
+        background-color: #f0f0f0 !important;
+    }
+    .nav-right-section{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }.nav-right-section .nav-item{
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+}

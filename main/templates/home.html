@@ -7,6 +7,19 @@
 <link rel="stylesheet" href="{% static '/main/css/home.css' %}">
 
 
+<style>
+    .col-img-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }#create-account-button{
+        padding-top: .7rem;
+        padding-bottom: .7rem;
+    }
+</style>
+
 <div class="container mt-5">
     <div class="hero-section">
         {% if request.user.is_authenticated %}
@@ -36,7 +49,8 @@
         {% else %}
 
         <div class="text-center py-3">
-            <a href="/register" class="btn btn-primary rounded px-3 py-2 fw-500"><span>{{ "Create a free account"|translate:selectedLanguage }}</span>
+            <a href="/register" id="create-account-button" class="btn btn-primary-gradient rounded px-4 fw-500">
+                <span>{{ "Create a free account"|translate:selectedLanguage }}</span>
             </a>
         </div>
 
@@ -44,57 +58,68 @@
         {% endif %}
 
         <div class="pt-4">
-            <img src="/static/main/img/example1.png" class="w-100 img-fluid rounded-lg" alt="">
+            <img src="/static/main/img/landing-image-1.png" class="w-100 img-fluid rounded-lg" alt="">
         </div>
     </div>
+</div>
 
-    <div class="row pt-5 pt-5">
-        <h2 class="bold">
+<div class="bg-primary pb-5 pt-3">
+    <div class="row pt-5 pt-5 d-flex justify-content-center m-0">
+        <h2 class="bold text-center text-white">
             {{ "Empower Your Business with Advanced AI-driven Solutions."|translate:selectedLanguage }}
         </h2>
-        <span class="py-3">
+        <span class="py-3 text-center text-white" style="max-width: 950px;">
             Quickly and efficiently explore your documents with our intuitive AI solution. Get accurate, instant answers to your most complex questions, and unlock the hidden potential of your data
         </span>
 
-        <span><i class="fa-solid fa-check text-success me-1"></i> Reliable and secure platform</span>
-        <span><i class="fa-solid fa-check text-success me-1"></i> Relevant and Sourced Responses</span>
-        <span><i class="fa-solid fa-check text-success me-1"></i> Security, privacy and regulatory compliance</span>
-
     </div>
 
-    <div class="row">
+    <div class="d-flex justify-content-center py-5">
+        <div class="d-flex flex-column w-fit">
+            <span class="w-fit text-white"><img src="/static/main/img/check-mark.png" class="check-mark-icon" alt="" srcset=""> Reliable and secure platform</span>
+            <span class="w-fit text-white"><img src="/static/main/img/check-mark.png" class="check-mark-icon" alt="" srcset=""> Relevant and Sourced Responses</span>
+            <span class="w-fit text-white"><img src="/static/main/img/check-mark.png" class="check-mark-icon" alt="" srcset=""> Security, privacy and regulatory compliance</span>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+
+    <div class="row pb-4 pt-5">
         <div class="col-md-6">
-            <h2 class="pt-5 mt-3 bold">{{ "Features"|translate:selectedLanguage }}</h2>
+            <h2 class="mt-3 bold">{{ "Features"|translate:selectedLanguage }}</h2>
 
             <div class="pt-3">
-                <h5>{{ "Hybrid Knowledge Base:"|translate:selectedLanguage }}</h5>
-                <span>ADVAISE combines the company's private databases with publicly available document databases
-                    (Legifrance, EUR-Lex, ECB, EBA, ACPR, and more).
+                <h5>{{ "Hybrid Knowledge Base"|translate:selectedLanguage }}</h5>
+                <span>
+                    Quickly and efficiently explore your documents and get accurate and sourced answers to your most complex questions.
                 </span>
             </div>
             <div class="pt-5">
-                <h5>{{ "Document-Enabled Interface:"|translate:selectedLanguage }}</h5>
+                <h5>{{ "Document-Enabled Interface"|translate:selectedLanguage }}</h5>
                 <span>
-                    {{ "ADVAISE extends its functionality by allowing users to not only get answers but also visualize and source documents directly."|translate:selectedLanguage }}
+                    {{ "Combine your company's private databases with publicly available document databases (Legifrance, EUR-Lex, ECB, EBA, ACPR, and more)."|translate:selectedLanguage }}
                 </span>
             </div>
             <div class="pt-5">
-                <h5>{{ "Streamline your workflow in a click:"|translate:selectedLanguage }}</h5>
+                <h5>{{ "Streamline your workflow in a click"|translate:selectedLanguage }}</h5>
                 <span>
-                    {{ "ADVAISE enables one-click creation of emails, Powerpoint presentations, and Word reports, plus offers a collaborative space for team work."|translate:selectedLanguage }}
+                    {{ "Share your creations via email with just one click, generate PowerPoint presentations and Word reports, and provide a collaborative space for teamwork (Coming soon)."|translate:selectedLanguage }}
                 </span>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="ps-4 pt-3">
-                <img src="/static/main/img/illustrations/home-features-example.avif" class="w-100 mt-3" alt="">
+        <div class="col-md-6 col-img-wrapper">
+            <div class="h-100 w-100 d-flex align-items-center justify-content-center">
+                <img src="/static/main/img/landing-image-2.png" class="w-100" alt="">
             </div>
         </div>
     </div>
 
     <div class="row pt-5 pb-5">
-        <div class="col-md-6">
-            <div class="pe-4 pt-3">
+        <div class="col-md-6 col-img-wrapper">
+            <div class="h-100 w-100 d-flex align-items-center justify-content-center">
                 <img src="/static/main/img/illustrations/home-security-example.avif" class="w-100" alt="">
             </div>
         </div>
@@ -102,35 +127,29 @@
             <h2 class="bold">{{ "Security and privacy"|translate:selectedLanguage }}</h2>
 
             <div class="pt-3">
-                <h5>{{ "Secure and dedicated platform:"|translate:selectedLanguage }}</h5>
+                <h5>{{ "Secure and dedicated platform"|translate:selectedLanguage }}</h5>
                 <span>
                     {{ "The application and data are stored on company servers or with reliable Cloud Service Provider (CSP)"|translate:selectedLanguage }}
                 </span>
             </div>
 
             <div class="pt-5">
-                <h5>{{ "Data privacy and security:"|translate:selectedLanguage }}</h5>
-                <span>The company's data is not shared with the providers of the LLMs. Execution takes place locally on
-                    secure dedicated servers.
+                <h5>{{ "Keep full control of your data"|translate:selectedLanguage }}</h5>
+                <span>
+                    Benefit from a secure, non-shared database with the LLM providers. Execution takes place locally on secure dedicated servers.
                 </span>
             </div>
 
             <div class="pt-5">
-                <h5>{{ "Accurate and sourced answers:"|translate:selectedLanguage }}</h5>
-                <span>The responses are generated from the company's private Knowledge Base, making the answers more
-                    accurate and relevant to the users.
-                </span>
-            </div>
-
-            <div class="pt-5">
-                <h5>{{ "Regulatory compliance:"|translate:selectedLanguage }}</h5>
-                <span>{{ "The RAG solution adheres to regulatory standards, including the AI Act."|translate:selectedLanguage }}</span>
+                <h5>{{ "Regulatory compliance"|translate:selectedLanguage }}</h5>
+                <span>{{ "The solution adheres to regulatory standards, including the AI Act and GDPR."|translate:selectedLanguage }}</span>
             </div>
         </div>
     </div>
 
-
-
 </div>
+
+
+
 
 {% endblock %}
