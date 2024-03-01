@@ -7,6 +7,7 @@
     --color-danger: #cf004c;
     --color-gray: #ededf1;
     --color-light: #f8f8f8;
+    --color-primary-lighter: #0e5f9525;
 }
 
 body {
@@ -37,6 +38,10 @@ body {
 .navbar .nav-item .nav-link.active,
 .navbar .nav-item .nav-link:hover {
     color: var(--color-text) !important;
+}
+
+.bg-primary-lighter{
+    background-color: var(--color-primary-lighter);
 }
 
 
