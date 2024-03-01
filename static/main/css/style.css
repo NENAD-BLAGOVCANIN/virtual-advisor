@@ -12,10 +12,9 @@
 body {
     color: var(--color-text) !important;
     font-size: 13pt;
-    font-family: Inter !important;
+    font-family: Poppins !important;
     font-weight: 400;
     font-style: normal;
-    background-color: #f6f6f8 !important;
 }
 
 #logo-img {

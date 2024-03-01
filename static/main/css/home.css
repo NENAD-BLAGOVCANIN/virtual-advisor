@@ -4,30 +4,22 @@ body {
 
 body::before {
     content: "";
-    background: url(/static/main/img/background.webp);
-    opacity: 0.14;
+    background: url(/static/main/img/background.png);
+    opacity: 0.2;
     background-repeat: no-repeat;
     position: absolute;
     background-size: contain;
     top: 0;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
+    left: 0%;
     right: 0;
     bottom: 0;
     z-index: -1;
 }
 
-body {
-    background-color: rgba(255, 255, 255, 1);
-}
-
-
 .hero-section{
-    max-width: 770px;
     width: 100%;
     margin: auto;
-    text-align: center;
+    text-align: left;
 }
 
 .hero-section h1{
