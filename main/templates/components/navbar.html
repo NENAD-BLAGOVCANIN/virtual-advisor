@@ -9,9 +9,9 @@
         <ul class="navbar-nav pe-5">
 
             <li class="nav-item d-flex align-items-center">
-                <a href="/" class="pe-5 d-flex align-items-center">
+                <a href="/" class="pe-5 d-flex align-items-center text-decoration-none">
                     <img src="/static/main/img/logo.png" id="logo-img" alt="">
-                    <span class="ps-3 text-dark"><b>Advaise</b></span>
+                    <span class="ps-3 text-dark"><b>ADVAISE</b></span>
                 </a>
             </li>
 
@@ -22,10 +22,10 @@
                 <a class="nav-link {% if request.path == '/' %}active{% else %}{% endif %}" href="/">{{ "Home"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/features">{{ "Features"|translate:selectedLanguage }}</a>
+                <a class="nav-link" href="#featuresSection">{{ "Features"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/privacy">{{ "Privacy"|translate:selectedLanguage }}</a>
+                <a class="nav-link" href="#privacySection">{{ "Privacy"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/blogs">{{ "Blog"|translate:selectedLanguage }}</a>
