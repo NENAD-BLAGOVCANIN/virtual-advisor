@@ -9,28 +9,31 @@ from django.db.models import Avg
 from django.db.models.functions import TruncMonth
 from django.db.models import Count
 from django.utils.dateformat import DateFormat
+from django.core.exceptions import PermissionDenied
 
 def dashboard(request):
 
-    registered_users = User.objects.all().count()
-    application_allowed_users = User.objects.filter(is_deleted = 0, application_access = User.APPLICATION_ACCESS_STATUS_ALLOWED).count()
-    application_declined_users = User.objects.filter(is_deleted = 0, application_access = User.APPLICATION_ACCESS_STATUS_DECLINED).count()
-    users_deleted = User.objects.filter(is_deleted=1).count()
+    if request.user.is_admin:
+        registered_users = User.objects.all().count()
+        application_allowed_users = User.objects.filter(is_deleted = 0, application_access = User.APPLICATION_ACCESS_STATUS_ALLOWED).count()
+        application_declined_users = User.objects.filter(is_deleted = 0, application_access = User.APPLICATION_ACCESS_STATUS_DECLINED).count()
+        users_deleted = User.objects.filter(is_deleted=1).count()
 
-    active_users = User.objects.all().count()
+        active_users = User.objects.all().count()
 
-    admin_count = User.objects.filter(is_deleted = 0, is_admin = True).count()
-    customer_count = User.objects.filter(is_deleted = 0, is_admin = False).count()
+        admin_count = User.objects.filter(is_deleted = 0, is_admin = True).count()
+        customer_count = User.objects.filter(is_deleted = 0, is_admin = False).count()
 
-    current_date = datetime.now()
+        current_date = datetime.now()
 
-    userGrowthData = getUsersGrowthData()
+        userGrowthData = getUsersGrowthData()
 
 
-    return render(request, 'dashboard.html', context={'registered_users':registered_users, 'users_deleted':users_deleted, 
-        'current_date':current_date, 'userGrowthData':userGrowthData, 'application_allowed_users':application_allowed_users, 
-        'application_declined_users':application_declined_users, 'admin_count':admin_count, 'customer_count':customer_count, 'active_users':active_users})
-
+        return render(request, 'dashboard.html', context={'registered_users':registered_users, 'users_deleted':users_deleted, 
+            'current_date':current_date, 'userGrowthData':userGrowthData, 'application_allowed_users':application_allowed_users, 
+            'application_declined_users':application_declined_users, 'admin_count':admin_count, 'customer_count':customer_count, 'active_users':active_users})
+    else:
+        raise PermissionDenied("You do not have permission to access this page")
 
 def getUsersGrowthData():
     today = datetime.now().date()
@@ -60,27 +63,38 @@ def getUsersGrowthData():
 
 def usersView(request):
 
-    new_users = User.objects.filter(application_access=User.APPLICATION_ACCESS_STATUS_PENDING, is_deleted=0)
-    asigned_access_users = User.objects.exclude(application_access=User.APPLICATION_ACCESS_STATUS_PENDING, is_deleted=0)
+    if request.user.is_admin:
 
-    return render(request, 'users.html', context={'new_users': new_users, 'asigned_access_users':asigned_access_users})
+        new_users = User.objects.filter(application_access=User.APPLICATION_ACCESS_STATUS_PENDING, is_deleted=0)
+        asigned_access_users = User.objects.exclude(application_access=User.APPLICATION_ACCESS_STATUS_PENDING, is_deleted=0)
+
+        return render(request, 'users.html', context={'new_users': new_users, 'asigned_access_users':asigned_access_users})
+    else:
+        raise PermissionDenied("You do not have permission to access this page")
 
 def allowUserApplicationAccess(request):
 
-    user_id = request.POST.get('user_id')
-    user = User.objects.get(id=user_id)
+    if request.user.is_admin:
+        user_id = request.POST.get('user_id')
+        user = User.objects.get(id=user_id)
 
-    user.application_access = User.APPLICATION_ACCESS_STATUS_ALLOWED
-    user.save()
+        user.application_access = User.APPLICATION_ACCESS_STATUS_ALLOWED
+        user.save()
 
-    return redirect('/administration/users')
+        return redirect('/administration/users')
+    else:
+        raise PermissionDenied("You do not have permission to access this page")
 
 def declineUserApplicationAccess(request):
 
-    user_id = request.POST.get('user_id')
-    user = User.objects.get(id=user_id)
+    if request.user.is_admin:
 
-    user.application_access = User.APPLICATION_ACCESS_STATUS_DECLINED
-    user.save()
+        user_id = request.POST.get('user_id')
+        user = User.objects.get(id=user_id)
 
-    return redirect('/administration/users')
+        user.application_access = User.APPLICATION_ACCESS_STATUS_DECLINED
+        user.save()
+
+        return redirect('/administration/users')
+    else:
+        raise PermissionDenied("You do not have permission to access this page")
