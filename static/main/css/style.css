@@ -24,7 +24,7 @@ body {
 }
 .navbar .nav-item .nav-link{
     font-weight: 500 !important;
-    color: var(--color-text) !important;
+    color: #161618dc !important;
 }
 
 .navbar .nav-item {
@@ -52,6 +52,12 @@ body {
 .btn-primary-gradient {
     position: relative;
     overflow: hidden;
+    z-index: 2;
+}
+
+.btn-primary-gradient > *{
+    z-index: 2;
+    position: relative;
 }
 
 .btn-primary-gradient::before {
@@ -64,7 +70,7 @@ body {
     background: rgb(67, 51, 146);
     background: radial-gradient(circle, rgba(67, 51, 146, 1) 79%, rgba(110, 44, 146, 1) 90%, rgba(154, 38, 146, 1) 100%);
     filter: blur(3px);
-    z-index: -1;
+    z-index: 1;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -141,4 +147,8 @@ body {
 .check-mark-icon {
     max-height: 55px;
     height: 100%;
+}
+
+footer li a{
+    font-size: 400 !important;
 }

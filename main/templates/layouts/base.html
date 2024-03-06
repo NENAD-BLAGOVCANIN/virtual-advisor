@@ -51,9 +51,11 @@
     {% endif %}
     {% endfor %}
 
-    {% block content %}
-    {% endblock %}
-
+    <div class="main-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
     {% include 'components/footer.html' %}
 
 

@@ -1,12 +1,18 @@
 {% load translation_filter %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3 px-3">
+<style>
+    .main-container{
+        padding-top: 87px !important;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light position-fixed w-100 bg-white shadow-sm py-3 px-3">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav pe-5">
+        <ul class="navbar-nav pe-2">
 
             <li class="nav-item d-flex align-items-center">
                 <a href="/" class="pe-5 d-flex align-items-center text-decoration-none">
@@ -19,7 +25,7 @@
         <ul class="navbar-nav m-auto">
 
             <li class="nav-item">
-                <a class="nav-link {% if request.path == '/' %}active{% else %}{% endif %}" href="/">{{ "Home"|translate:selectedLanguage }}</a>
+                <a class="nav-link" href="/">{{ "Home"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#featuresSection">{{ "Features"|translate:selectedLanguage }}</a>
@@ -74,10 +80,6 @@
                         {{ "Start Today"|translate:selectedLanguage }}
                     </span>
                 </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="btn btn-basic bg-white border rounded px-3" href="/login">{{ "Login"|translate:selectedLanguage }}</a>
             </li>
             {% endif %}
         </ul>
