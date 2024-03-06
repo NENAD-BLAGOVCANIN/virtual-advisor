@@ -12,12 +12,12 @@
         </div>
         <h5 class="fw-500 text-center pt-2">{{ request.user.first_name }} {{ request.user.last_name }}</h5>
         <div class="py-5 text-center">
-            <span class="d-block py-2">First Name: {{ request.user.first_name }}</span>
-            <span class="d-block py-2">Last Name: {{ request.user.last_name }}</span>
-            <span class="d-block py-2">Email: {{ request.user.email }}</span>
-            <span class="d-block py-2">Role: <span class="badge badge-primary bg-primary">{% if request.user.is_admin %}admin{% else %}user{% endif %}</span></span>
-            <span class="d-block py-2">Phone: {{ request.user.phone_number }}</span>
-            <span>Application Access: 
+            <span class="d-block py-2">{{ "First Name:"|translate:selectedLanguage }} {{ request.user.first_name }}</span>
+            <span class="d-block py-2">{{ "Last Name:"|translate:selectedLanguage }} {{ request.user.last_name }}</span>
+            <span class="d-block py-2">{{ "Email:"|translate:selectedLanguage }} {{ request.user.email }}</span>
+            <span class="d-block py-2">{{ "Role:"|translate:selectedLanguage }} <span class="badge badge-primary bg-primary">{% if request.user.is_admin %}admin{% else %}user{% endif %}</span></span>
+            <span class="d-block py-2">{{ "Phone:"|translate:selectedLanguage }} {{ request.user.phone_number }}</span>
+            <span>{{ "Application Access:"|translate:selectedLanguage }}
                 <span class="badge badge-primary 
                     {% if request.user.application_access == 'allowed' %} bg-success {% elif request.user.application_access == 'declined' %} bg-danger {% else %} bg-warning {% endif %}">
                     {{ request.user.application_access }}
