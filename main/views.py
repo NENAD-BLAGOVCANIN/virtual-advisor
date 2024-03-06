@@ -87,3 +87,7 @@ def set_local_language(request):
     request.session['django_language'] = language
 
     return HttpResponse('Language set successfully.')
+
+
+def my_profile_view(request):
+    return render(request, 'my-profile.html')

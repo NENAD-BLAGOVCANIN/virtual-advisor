@@ -22,10 +22,9 @@ body {
     height: 50px;
     width: auto;
 }
-
-.navbar .nav-item .nav-link {
-    color: var(--color-secondary) !important;
-    font-weight: 500;
+.navbar .nav-item .nav-link{
+    font-weight: 500 !important;
+    color: var(--color-text) !important;
 }
 
 .navbar .nav-item {
@@ -33,11 +32,6 @@ body {
     padding-right: .5rem !important;
     display: flex;
     align-items: center;
-}
-
-.navbar .nav-item .nav-link.active,
-.navbar .nav-item .nav-link:hover {
-    color: var(--color-text) !important;
 }
 
 .bg-primary-lighter{
