@@ -11,13 +11,13 @@
                     <img src="/static/main/img/logo.png" style="max-height: 125px;" alt="">
 
                     <h2><b>{{ "Welcome back"|translate:selectedLanguage }}</b></h2>
-                    <span class="text-muted small">Sign in to your account</span>
+                    <span class="text-muted small">{{ "Sign in to your account"|translate:selectedLanguage }}</span>
                 
                     <div class="py-2">
-                        <input class="form-control rounded-lg py-2" name="email" type="text" placeholder="Work Email">
+                        <input class="form-control rounded-lg py-2" name="email" type="text" placeholder="{{ 'Work Email'|translate:selectedLanguage }}">
                     </div>
                     <div class="py-2">
-                        <input class="form-control rounded-lg py-2" name="password" type="password" placeholder="Password">
+                        <input class="form-control rounded-lg py-2" name="password" type="password" placeholder="{{ 'Password'|translate:selectedLanguage }}">
                     </div>
 
                     {% for field in login_form %}
