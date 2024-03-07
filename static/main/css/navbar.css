@@ -1,14 +1,44 @@
+.navbar {
+    z-index: 9999 !important;
+}
+
+.navbar .nav-item .nav-link {
+    color: #525257dc !important;
+}
+
+.navbar .nav-item .nav-link:hover {
+    color: #000000 !important;
+}
+
+.navbar .nav-item {
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+    display: flex;
+    align-items: center;
+}
+
+#navbar-user-icon {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
 @media only screen and (max-width: 991px) {
-    .nav-right-section{
+    .nav-right-section {
         padding-top: 1rem;
         padding-bottom: 1rem;
-    }.nav-right-section .nav-item{
+    }
+
+    .nav-right-section .nav-item {
         padding-top: .5rem;
         padding-bottom: .5rem;
-    }#navbarNav{
+    }
+
+    #navbarNav {
         padding-top: 2rem;
     }
-    .navbar{
+
+    .navbar {
         z-index: 9;
     }
 }

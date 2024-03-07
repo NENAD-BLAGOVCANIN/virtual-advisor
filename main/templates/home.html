@@ -20,54 +20,34 @@
     }
 </style>
 
-<div class="container hero-section-wrapper">
-    <div class="hero-section">
-        {% if request.user.is_authenticated %}
-        <h2 class="d-flex justify-content-center align-items-center">
-            {{ "Hello,"|translate:selectedLanguage }} {{ request.user.first_name }}!
-            <img src="/static/main/img/animations/hand_wave.gif" style="max-height: 75px;" alt="">
 
-        </h2>
-        <h5 class="py-3" style="font-weight: 400;">
-            {{ "Welcome to ADVAISE. If your access has been approved by our teams, you can start the wizard by clicking on the button below."|translate:selectedLanguage }}
-        </h5>
+{% if request.user.is_authenticated %}
 
-        <div class="text-center">
-            <a href="https://app.advaise.net/" class="btn btn-primary-gradient text-white"><i class="fa-solid fa-rocket pe-1 text-white"></i> 
-                <span>
-                    {{ "Launch Assistant"|translate:selectedLanguage }}
-                </span>    
-            </a>
-        </div>
+<div class="container">
+    <h2 class="d-flex justify-content-center align-items-center">
+        {{ "Hello,"|translate:selectedLanguage }} {{ request.user.first_name }}!
+        <img src="/static/main/img/animations/hand_wave.gif" style="max-height: 75px;" alt="">
+    </h2>
+    <h5 class="py-3" style="font-weight: 400;">
+        {{ "Welcome to ADVAISE. If your access has been approved by our teams, you can start the wizard by clicking on the button below."|translate:selectedLanguage }}
+    </h5>
 
-        {% else %}
-
-        <div class="row pt-sm-5 pb-5 mb-5">
-            <div class="col-md-7">
-                <h1 class="bold">{{ "Secure AI-powered Knowledge Base Discovery for Corporates"|translate:selectedLanguage }}</h1>
-                <h5 class="text-secondary py-3" style="font-weight: 400;">
-                    {{ "Securely Analyze, Compare, and Summarize Documents with AI in a Private Cloud Environment"|translate:selectedLanguage }}
-                </h5>
-                <div class="py-3">
-                    <a href="/register" id="create-account-button" class="btn btn-primary-gradient rounded px-4 fw-500">
-                        <span>{{ "Start Today For Free"|translate:selectedLanguage }}</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="d-flex justify-content-center align-items-center h-100">
-                    <img src="/static/main/img/landing-image-1.png" class="w-100 img-fluid rounded" alt="">
-                </div>
-            </div>
-        </div>
-
-        
-        {% endif %}
-
+    <div class="text-center">
+        <a href="https://app.advaise.net/" class="btn btn-primary-gradient text-white"><i class="fa-solid fa-rocket pe-1 text-white"></i> 
+            <span>
+                {{ "Launch Assistant"|translate:selectedLanguage }}
+            </span>    
+        </a>
     </div>
 </div>
 
-<div class="py-5">
+{% else %}
+
+{% include 'components/hero-section.html' %}
+
+{% endif %}
+
+<div id="section-b" class="bg-lighter d-flex flex-column justify-content-center align-items-center position-relative" style="height: calc(80vh - 83px);">
     <div class="row pt-sm-5 d-flex justify-content-center m-0">
         <h2 class="bold text-center">
             {{ "Empower Your Business with Advanced AI-driven Solutions."|translate:selectedLanguage }}
@@ -85,16 +65,18 @@
             <span class="w-fit fw-500"><img src="/static/main/img/check-icon.png" loading="lazy" class="check-mark-icon" alt="" srcset=""> {{ "Security, privacy and regulatory compliance"|translate:selectedLanguage }}</span></span>
         </div>
     </div>
-
 </div>
 
 
 <div class="container pb-5" style="max-width: 1600px !important;">
 
     <div class="row px-3 pb-4 py-5" id="featuresSection">
-        <h2 class="mt-3 bold">{{ "Features"|translate:selectedLanguage }}</h2>
+        <h2 class="mt-3 bold">
+            {{ "Features"|translate:selectedLanguage }}
+            <img src="/static/main/img/illustrations/features.png" class="h-100" style="max-height: 55px;" alt="">
+        </h2>
 
-        <div class="col-md-7">
+        <div class="col-md-6">
 
             <div class="pt-3">
                 <h5>{{ "Hybrid Knowledge Base"|translate:selectedLanguage }}</h5>
@@ -115,16 +97,19 @@
                 </span>
             </div>
         </div>
-        <div class="col-md-5 col-img-wrapper">
+        <div class="col-md-6 col-img-wrapper">
             <div class="h-100 w-100 d-flex align-items-center justify-content-center">
                 <img src="/static/main/img/landing-image-2.png" loading="lazy" class="w-100" alt="">
             </div>
         </div>
     </div>
 
-    <div class="row  px-3 py-5 mt-5" id="privacySection">
-        <div class="col-md-7">
-            <h2 class="bold">{{ "Security and privacy"|translate:selectedLanguage }}</h2>
+    <div class="row px-3 py-5 mt-5" id="privacySection">
+        <div class="col-md-6">
+            <h2 class="bold">
+                {{ "Security and privacy"|translate:selectedLanguage }}
+                <img src="/static/main/img/illustrations/security.jpg" class="h-100" style="max-height: 55px;" alt="">
+            </h2>
 
             <div class="pt-3">
                 <h5>{{ "Secure and dedicated platform"|translate:selectedLanguage }}</h5>
@@ -145,24 +130,49 @@
                 <span>{{ "The solution adheres to regulatory standards, including the AI Act and GDPR."|translate:selectedLanguage }}</span>
             </div>
         </div>
-        <div class="col-md-5 col-img-wrapper">
+        <div class="col-md-6 col-img-wrapper">
             <div class="h-100 w-100 d-flex align-items-center justify-content-center">
                 <img src="/static/main/img/illustrations/home-security-example.webp?v=2" loading="lazy" class="w-100" alt="">
             </div>
         </div>
     </div>
 
-    {% if not request.user.is_authenticated %}
-
-    <div class="rounded-lg bg-primary-lighter py-5 my-3 d-flex flex-column justify-content-center align-items-center">
-        <h1 class="mb-0 px-3">{{ "Start Today"|translate:selectedLanguage }}</h1>
-        <span class="py-4 text-center text-secondary">{{ "Get ahead with collaborative and secure AI"|translate:selectedLanguage }}</span>
-        <a href="/register" class="btn btn-basic bg-dark text-white rounded-lg fw-500">{{ "Start Today"|translate:selectedLanguage }}</a>
-    </div>
-
-    {% endif %}
-
 </div>
+
+
+{% if not request.user.is_authenticated %}
+
+<div class="bg-primary py-5 mt-3">
+    <div class="row m-0 py-3">
+        <div class="col-md-6 d-flex flex justify-content-center align-items-center">
+            <div style="max-width: 550px;" class="w-100">
+
+                <h1 class="mb-0 py-4 text-white">
+                    {{ "Ready to start using our AI virtual advisor?"|translate:selectedLanguage }}
+                </h1>
+
+                <span class="py-5 text-center text-white">
+                    {{ "Create an account and get started using Advaise, with full access to our Advanced AI-driven Solutions."|translate:selectedLanguage }}
+                </span>
+
+                <div class="py-4">
+                    <a href="/register" class="btn btn-basic bg-dark text-white rounded fw-500 py-3 px-4">
+                        <span class="h5">
+                            {{ "Start Today For Free"|translate:selectedLanguage }}
+                        </span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="/static/main/img/app-demo-img.webp" class="w-100 img-fluid" alt="">
+        </div>
+    </div>
+    
+</div>
+
+{% endif %}
 
 
 {% endblock %}

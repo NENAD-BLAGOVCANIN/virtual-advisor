@@ -1,0 +1,34 @@
+{% load translation_filter %}
+
+<div class="container hero-section-wrapper">
+    <div class="hero-section">
+
+        <div class="row pt-sm-5 pb-5 mb-5">
+            <div class="col-md-5">
+                <h1 class="bold headline">
+                    {{ "Secure AI-powered Knowledge Base Discovery for Corporates"|translate:selectedLanguage }}
+                    <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f680.svg" style="max-height: 55px;" alt="">
+                </h1>
+                <h5 class="text-secondary py-3" style="font-weight: 400; max-width: 550px;">
+                    {{ "Securely Analyze, Compare, and Summarize Documents with AI in a Private Cloud Environment"|translate:selectedLanguage }}
+                </h5>
+                <div class="py-3">
+                    <a href="/register" id="create-account-button" class="btn btn-primary-gradient rounded px-4 py-3 fw-500">
+                        <span class="h5">{{ "Start Today For Free"|translate:selectedLanguage }}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <img src="/static/main/img/app-demo-img.webp" class="w-100 img-fluid rounded" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute" style="bottom: 2rem; left: 50%; transform: translateX(-50%);">
+            <a href="#section-b"><i class="fa fa-chevron-down h1 text-black"></i>
+            </a>
+        </div>
+
+    </div>
+</div>

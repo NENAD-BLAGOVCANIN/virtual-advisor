@@ -1,7 +1,7 @@
 :root {
     --color-primary: #433392;
     --color-text: #161618;
-    --color-secondary: #717179;
+    --color-secondary: #2e2e31;
     --color-success: #049f61;
     --color-dark: #161618;
     --color-danger: #cf004c;
@@ -22,22 +22,14 @@ body {
     height: 50px;
     width: auto;
 }
-.navbar .nav-item .nav-link{
-    font-weight: 500 !important;
-    color: #161618dc !important;
-}
-
-.navbar .nav-item {
-    padding-left: .5rem !important;
-    padding-right: .5rem !important;
-    display: flex;
-    align-items: center;
-}
 
 .bg-primary-lighter{
     background-color: var(--color-primary-lighter);
 }
 
+.bg-lighter{
+    background-color: rgb(248, 246, 255) !important;
+}
 
 .text-secondary {
     color: var(--color-secondary) !important;
@@ -115,12 +107,6 @@ body {
 .form-control {
     border-width: 2px;
     border-radius: 1rem !important;
-}
-
-#navbar-user-icon {
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
 }
 
 .pointer {

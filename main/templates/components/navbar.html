@@ -6,83 +6,90 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light position-fixed w-100 bg-white shadow-sm py-3 px-3">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav pe-2">
+<nav class="navbar navbar-expand-lg position-fixed navbar-light border-bottom w-100 bg-white py-3 px-3">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav pe-2">
 
-            <li class="nav-item d-flex align-items-center">
-                <a href="/" class="pe-5 d-flex align-items-center text-decoration-none">
-                    <img src="/static/main/img/logo.png" id="logo-img" alt="">
-                    <span class="ps-3 text-dark"><b>ADVAISE</b></span>
-                </a>
-            </li>
-
-        </ul>
-        <ul class="navbar-nav m-auto">
-
-            <li class="nav-item">
-                <a class="nav-link" href="/">{{ "Home"|translate:selectedLanguage }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#featuresSection">{{ "Features"|translate:selectedLanguage }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#privacySection">{{ "Privacy"|translate:selectedLanguage }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blogs">{{ "Blog"|translate:selectedLanguage }}</a>
-            </li>
-
-        </ul>
-        <ul class="navbar-nav nav-right-section">
-
-            <div class="nav-item align-items-center pe-3 d-flex">
-                {% include 'components/language-selector.html' %}
-            </div>
-
-            {% if request.user.is_authenticated %}
-            <li class="nav-item">
-                <div class="dropdown">
-                    <button class="btn btn-basic dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="/static/main/img/profile.svg" id="navbar-user-icon" alt="">
-                    </button>
-                    <div class="dropdown-menu py-3 px-4 border-0 shadow rounded" aria-labelledby="dropdownMenuButton">
-                        <span class="d-block m-auto text-center small fw-500">Hello, {{ request.user.first_name|slice:":10" }}</span>
-                        <span class="text-muted d-block m-auto mb-4 text-center small">
-                            {{ request.user.email|slice:":18" }}
-                        </span>
-                        {% if request.user.is_admin %}
-                        <a class="dropdown-item py-2" href="/administration/dashboard">{{ "Dashboard"|translate:selectedLanguage }}</a>
-                        {% endif %}
-                        <a class="dropdown-item py-2" href="/my-profile">{{ "My profile"|translate:selectedLanguage }}</a>
-                        <a class="dropdown-item py-2" href="/logout">{{ "Logout"|translate:selectedLanguage }}</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="/profile">
-                    <a href="https://app.advaise.net/" class="btn btn-primary-gradient rounded px-3"><i class="fa-solid fa-rocket pe-1 text-white"></i> 
-                        <span>
-                            {{ "Launch Assistant"|translate:selectedLanguage }}
-                        </span>    
+                <li class="nav-item d-flex align-items-center">
+                    <a href="/" class="pe-5 d-flex align-items-center text-decoration-none">
+                        <img src="/static/main/img/logo.png" id="logo-img" alt="">
+                        <span class="ps-3 text-dark"><b>ADVAISE</b></span>
                     </a>
-                </a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="btn btn-primary-gradient rounded px-3" href="/register">
-                    <span>
-                        {{ "Start Today"|translate:selectedLanguage }}
-                    </span>
-                </a>
-            </li>
-            {% endif %}
-        </ul>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav m-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">{{ "Home"|translate:selectedLanguage }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#featuresSection">{{ "Features"|translate:selectedLanguage }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#privacySection">{{ "Privacy"|translate:selectedLanguage }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blogs">{{ "Blog"|translate:selectedLanguage }}</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav nav-right-section">
+
+                <div class="nav-item align-items-center pe-3 d-flex">
+                    {% include 'components/language-selector.html' %}
+                </div>
+
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-basic dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/static/main/img/profile.svg" id="navbar-user-icon" alt="">
+                        </button>
+                        <div class="dropdown-menu py-3 px-4 border-0 shadow rounded" aria-labelledby="dropdownMenuButton">
+                            <span class="d-block m-auto text-center small fw-500">Hello, {{ request.user.first_name|slice:":10" }}</span>
+                            <span class="text-muted d-block m-auto mb-4 text-center small">
+                                {{ request.user.email|slice:":18" }}
+                            </span>
+                            {% if request.user.is_admin %}
+                            <a class="dropdown-item py-2" href="/administration/dashboard">{{ "Dashboard"|translate:selectedLanguage }}</a>
+                            {% endif %}
+                            <a class="dropdown-item py-2" href="/my-profile">{{ "My profile"|translate:selectedLanguage }}</a>
+                            <a class="dropdown-item py-2" href="/logout">{{ "Logout"|translate:selectedLanguage }}</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/profile">
+                        <a href="https://app.advaise.net/" class="btn btn-primary-gradient rounded px-3"><i class="fa-solid fa-rocket pe-1 text-white"></i> 
+                            <span>
+                                {{ "Launch Assistant"|translate:selectedLanguage }}
+                            </span>    
+                        </a>
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">
+                            {{ "Log in"|translate:selectedLanguage }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary-gradient rounded px-3" href="/register">
+                        <span>
+                            {{ "Start Today"|translate:selectedLanguage }}
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
 </nav>
 
