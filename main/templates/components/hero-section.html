@@ -1,34 +1,28 @@
 {% load translation_filter %}
 
-<div class="container hero-section-wrapper">
+<div class="container hero-section-wrapper py-5">
     <div class="hero-section">
-
-        <div class="row pt-sm-5 pb-5 mb-5">
-            <div class="col-md-5">
-                <h1 class="bold headline">
+        <div class="d-flex flex-column align-items-center pt-sm-5 py-5 my-5">
+            <div style="max-width: 750px;" class="w-100">
+                <h1 class="text-center bold headline w-100">
                     {{ "Secure AI-powered Knowledge Base Discovery for Corporates"|translate:selectedLanguage }}
                     <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f680.svg" style="max-height: 55px;" alt="">
                 </h1>
-                <h5 class="text-secondary py-3" style="font-weight: 400; max-width: 550px;">
+                <h5 class="text-center m-auto text-secondary p-3" style="font-weight: 400;">
                     {{ "Securely Analyze, Compare, and Summarize Documents with AI in a Private Cloud Environment"|translate:selectedLanguage }}
                 </h5>
-                <div class="py-3">
+                <div class="text-center py-3">
                     <a href="/register" id="create-account-button" class="btn btn-primary-gradient rounded px-4 py-3 fw-500">
                         <span class="h5">{{ "Start Today For Free"|translate:selectedLanguage }}</span>
                     </a>
+                    <p class="small text-ceter text-muted pt-2">No credit card required.</p>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="d-flex justify-content-center align-items-center h-100">
-                    <img src="/static/main/img/app-demo-img.webp" class="w-100 img-fluid rounded" alt="">
+            <div>
+                <div class="d-flex justify-content-center align-items-center h-100 pt-5">
+                    <img src="/static/main/img/app-demo-img.webp" class="w-75 img-fluid rounded" alt="">
                 </div>
             </div>
         </div>
-
-        <div class="position-absolute" style="bottom: 2rem; left: 50%; transform: translateX(-50%);">
-            <a href="#section-b"><i class="fa fa-chevron-down h1 text-black"></i>
-            </a>
-        </div>
-
     </div>
 </div>

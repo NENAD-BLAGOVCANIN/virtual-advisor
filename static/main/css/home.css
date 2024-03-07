@@ -20,11 +20,8 @@ body::before {
     width: 100%;
     margin: auto;
     text-align: left;
-    height: calc(100vh - 83px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .hero-section h1 {
