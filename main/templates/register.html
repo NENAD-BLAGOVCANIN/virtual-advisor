@@ -22,9 +22,9 @@
             <div class="d-flex flex-row align-items-center justify-content-center h-100 pt-5">
                 <form action="#" method="POST">{% csrf_token %}
 
-                    <img src="/static/main/img/logo.png" style="max-height: 125px;" alt="">
+                    <img src="/static/main/img/logo.svg" style="max-height: 125px;" alt="">
 
-                    <h2><b>{{ "Create your account"|translate:selectedLanguage }}</b></h2>
+                    <h2 class="mt-5"><b>{{ "Create your account"|translate:selectedLanguage }}</b></h2>
                     <span class="text-muted small">{{ "Enter your details to sign up"|translate:selectedLanguage }}</span>
                     <div class="row pt-3">
                         <div class="col-md-6">

@@ -23,16 +23,16 @@
 
 {% if request.user.is_authenticated %}
 
-<div class="container">
+<div class="container py-5">
     <h2 class="d-flex justify-content-center align-items-center">
         {{ "Hello,"|translate:selectedLanguage }} {{ request.user.first_name }}!
         <img src="/static/main/img/animations/hand_wave.gif" style="max-height: 75px;" alt="">
     </h2>
-    <h5 class="py-3" style="font-weight: 400;">
+    <h5 class="py-3 m-auto d-block text-center" style="font-weight: 400; max-width: 600px;">
         {{ "Welcome to ADVAISE. If your access has been approved by our teams, you can start the wizard by clicking on the button below."|translate:selectedLanguage }}
     </h5>
 
-    <div class="text-center">
+    <div class="text-center pt-5">
         <a href="https://app.advaise.net/" class="btn btn-primary-gradient text-white"><i class="fa-solid fa-rocket pe-1 text-white"></i> 
             <span>
                 {{ "Launch Assistant"|translate:selectedLanguage }}

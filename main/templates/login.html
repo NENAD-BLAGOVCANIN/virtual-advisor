@@ -8,9 +8,9 @@
             <div class="d-flex flex-row align-items-center justify-content-center h-100 pt-5">
                 <form action="#" method="POST" class="w-100" style="max-width: 550px;">{% csrf_token %}
 
-                    <img src="/static/main/img/logo.png" style="max-height: 125px;" alt="">
+                    <img src="/static/main/img/logo.svg" style="max-height: 125px;" alt="">
 
-                    <h2><b>{{ "Welcome back"|translate:selectedLanguage }}</b></h2>
+                    <h2 class="mt-5"><b>{{ "Welcome back"|translate:selectedLanguage }}</b></h2>
                     <span class="text-muted small">{{ "Sign in to your account"|translate:selectedLanguage }}</span>
                 
                     <div class="py-2">
