@@ -94,3 +94,13 @@ def my_profile_view(request):
 
 def aboutUs(request):
     return render(request, 'about-us.html')
+
+def customerSupport(request):
+    return render(request, 'customer-support.html')
+
+def privacyPolicy(request):
+    return render(request, 'privacy-policy.html')
+
+
+def userAgreement(request):
+    return render(request, 'user-agreement.html')
