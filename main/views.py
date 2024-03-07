@@ -78,7 +78,6 @@ def logout_view(request):
     return redirect("home")
 
 
-
 def set_local_language(request):
     language = request.POST.get('language', 'fr')
 
@@ -91,3 +90,7 @@ def set_local_language(request):
 
 def my_profile_view(request):
     return render(request, 'my-profile.html')
+
+
+def aboutUs(request):
+    return render(request, 'about-us.html')
