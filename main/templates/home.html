@@ -70,71 +70,62 @@
 
 <div class="container pb-5" style="max-width: 1600px !important;">
 
-    <div class="row px-3 pb-4 py-5" id="featuresSection">
-        <h2 class="mt-3 bold">
-            {{ "Features"|translate:selectedLanguage }}
-            <img src="/static/main/img/illustrations/features.png" class="h-100" style="max-height: 55px;" alt="">
-        </h2>
-
+    <div class="row">
         <div class="col-md-6">
-
-            <div class="pt-3">
-                <h5>{{ "Hybrid Knowledge Base"|translate:selectedLanguage }}</h5>
-                <span>
-                    {{ "Quickly and efficiently explore your documents and get accurate and sourced answers to your most complex questions."|translate:selectedLanguage }}
-                </span>
-            </div>
-            <div class="pt-5">
-                <h5>{{ "Document-Enabled Interface"|translate:selectedLanguage }}</h5>
-                <span>
-                    {{ "Combine your company's private databases with publicly available document databases (Legifrance, EUR-Lex, ECB, EBA, ACPR, and more)."|translate:selectedLanguage }}
-                </span>
-            </div>
-            <div class="pt-5">
-                <h5>{{ "Streamline your workflow in a click"|translate:selectedLanguage }}</h5>
-                <span>
-                    {{ "Share your creations via email with just one click, generate PowerPoint presentations and Word reports, and provide a collaborative space for teamwork (Coming soon)."|translate:selectedLanguage }}
-                </span>
+            <div class="px-3 pb-4 py-5 m-auto d-block" id="featuresSection" style="max-width: 650px;">
+                <h2 class="mt-3 bold">
+                    {{ "Features"|translate:selectedLanguage }}
+                    <img src="/static/main/img/illustrations/features.png" class="h-100" style="max-height: 55px;" alt="">
+                </h2>
+        
+                <div class="pt-3">
+                    <h5>{{ "Hybrid Knowledge Base"|translate:selectedLanguage }}</h5>
+                    <span>
+                        {{ "Quickly and efficiently explore your documents and get accurate and sourced answers to your most complex questions."|translate:selectedLanguage }}
+                    </span>
+                </div>
+                <div class="pt-5">
+                    <h5>{{ "Document-Enabled Interface"|translate:selectedLanguage }}</h5>
+                    <span>
+                        {{ "Combine your company's private databases with publicly available document databases (Legifrance, EUR-Lex, ECB, EBA, ACPR, and more)."|translate:selectedLanguage }}
+                    </span>
+                </div>
+                <div class="pt-5">
+                    <h5>{{ "Streamline your workflow in a click"|translate:selectedLanguage }}</h5>
+                    <span>
+                        {{ "Share your creations via email with just one click, generate PowerPoint presentations and Word reports, and provide a collaborative space for teamwork (Coming soon)."|translate:selectedLanguage }}
+                    </span>
+                </div>
             </div>
         </div>
-        <div class="col-md-6 col-img-wrapper">
-            <div class="h-100 w-100 d-flex align-items-center justify-content-center">
-                <img src="/static/main/img/landing-image-2.png" loading="lazy" class="w-100" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div class="row px-3 py-5 mt-5" id="privacySection">
         <div class="col-md-6">
-            <h2 class="bold">
-                {{ "Security and privacy"|translate:selectedLanguage }}
-                <img src="/static/main/img/illustrations/security.jpg" class="h-100" style="max-height: 55px;" alt="">
-            </h2>
-
-            <div class="pt-3">
-                <h5>{{ "Secure and dedicated platform"|translate:selectedLanguage }}</h5>
-                <span>
-                    {{ "The application and data are stored on company servers or with reliable Cloud Service Provider (CSP)"|translate:selectedLanguage }}
-                </span>
-            </div>
-
-            <div class="pt-5">
-                <h5>{{ "Keep full control of your data"|translate:selectedLanguage }}</h5>
-                <span>
-                    {{ "Benefit from a secure, non-shared database with the LLM providers. Execution takes place locally on secure dedicated servers."|translate:selectedLanguage }}
-                </span>
-            </div>
-
-            <div class="pt-5">
-                <h5>{{ "Regulatory compliance"|translate:selectedLanguage }}</h5>
-                <span>{{ "The solution adheres to regulatory standards, including the AI Act and GDPR."|translate:selectedLanguage }}</span>
-            </div>
-        </div>
-        <div class="col-md-6 col-img-wrapper">
-            <div class="h-100 w-100 d-flex align-items-center justify-content-center">
-                <img src="/static/main/img/illustrations/home-security-example.webp?v=2" loading="lazy" class="w-100" alt="">
+            <div class="px-3 pb-4 py-5 m-auto d-block" id="privacySection" style="max-width: 650px;">
+                <h2 class="mt-3 bold">
+                    {{ "Security and privacy"|translate:selectedLanguage }}
+                    <img src="/static/main/img/illustrations/security.jpg" class="h-100" style="max-height: 55px;" alt="">
+                </h2>
+        
+                <div class="pt-3">
+                    <h5>{{ "Secure and dedicated platform"|translate:selectedLanguage }}</h5>
+                    <span>
+                        {{ "The application and data are stored on company servers or with reliable Cloud Service Provider (CSP)"|translate:selectedLanguage }}
+                    </span>
+                </div>
+        
+                <div class="pt-5">
+                    <h5>{{ "Keep full control of your data"|translate:selectedLanguage }}</h5>
+                    <span>
+                        {{ "Benefit from a secure, non-shared database with the LLM providers. Execution takes place locally on secure dedicated servers."|translate:selectedLanguage }}
+                    </span>
+                </div>
+        
+                <div class="pt-5">
+                    <h5>{{ "Regulatory compliance"|translate:selectedLanguage }}</h5>
+                    <span>{{ "The solution adheres to regulatory standards, including the AI Act and GDPR."|translate:selectedLanguage }}</span>
+                </div>
             </div>
         </div>
+        
     </div>
 
 </div>
@@ -151,9 +142,11 @@
                     {{ "Ready to start using our AI virtual advisor?"|translate:selectedLanguage }}
                 </h1>
 
-                <span class="py-5 text-center text-white">
-                    {{ "Create an account and get started using Advaise, with full access to our Advanced AI-driven Solutions."|translate:selectedLanguage }}
-                </span>
+                <div class="py-3">
+                    <span class="text-center text-white">
+                        {{ "Create an account and get started using Advaise, with full access to our Advanced AI-driven Solutions."|translate:selectedLanguage }}
+                    </span>
+                </div>
 
                 <div class="py-4">
                     <a href="/register" class="btn btn-basic bg-dark text-white rounded fw-500 py-3 px-4">
