@@ -21,37 +21,39 @@
 
     {% include 'components/navbar.html' %}
 
-    {% for message in messages %}
-    {% if message.tags == "info" %}
-    <div class="container">
-        <div id="pending-access-message" class="m-auto rounded bg-gray p-4 shadow-sm position-relative"
-            style="max-width: 550px; width: 100%;">
-            <span class="position-absolute text-white bg-success pointer" onclick="$('#pending-access-message').hide()"
-                style="top: -.5rem; right: -.5rem; width: 20px;height: 20px;border-radius: 50%;display: flex;justify-content: center;align-items: center;">
-                <i class="fa fa-x" style="font-size: 10px;"></i></span>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="/static/main/img/illustrations/team-review.jpg" style="max-width: 300px;"
-                        class="img-fluid w-100" alt="">
-                </div>
-                <div class="col-md-6">
-                    <span style="font-weight: 400;">Your account is in review. Once our team reviews your account and
-                        determens that
-                        everything is in order, we will grant you the access to our
-                        <b>Virtual Advisor Application</b>
-                    </span>
+    <div class="main-container">
+
+        {% for message in messages %}
+        {% if message.tags == "info" %}
+        <div class="container">
+            <div id="pending-access-message" class="m-auto rounded bg-gray p-4 shadow-sm position-relative"
+                style="max-width: 550px; width: 100%;">
+                <span class="position-absolute text-white bg-success pointer" onclick="$('#pending-access-message').hide()"
+                    style="top: -.5rem; right: -.5rem; width: 20px;height: 20px;border-radius: 50%;display: flex;justify-content: center;align-items: center;">
+                    <i class="fa fa-x" style="font-size: 10px;"></i></span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/static/main/img/illustrations/team-review.jpg" style="max-width: 300px;"
+                            class="img-fluid w-100" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <span style="font-weight: 400;">Your account is in review. Once our team reviews your account and
+                            determens that
+                            everything is in order, we will grant you the access to our
+                            <b>Virtual Advisor Application</b>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    {% else %}
-    <script>
-        showAlert("{{ message }}", "{{ message.tags }}");
-    </script>
-    {% endif %}
-    {% endfor %}
+        {% else %}
+        <script>
+            showAlert("{{ message }}", "{{ message.tags }}");
+        </script>
+        {% endif %}
+        {% endfor %}
 
-    <div class="main-container">
+
         {% block content %}
         {% endblock %}
     </div>
