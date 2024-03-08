@@ -21,8 +21,10 @@
 
     {% include 'partials/admin-navbar.html' %}
 
-    {% block content %}
-    {% endblock %}
+    <div class="main-container pb-5">
+        {% block content %}
+        {% endblock %}
+    </div>
 
     {% include 'components/footer.html' %}
 
