@@ -104,3 +104,7 @@ def privacyPolicy(request):
 
 def userAgreement(request):
     return render(request, 'user-agreement.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')

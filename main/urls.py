@@ -1,4 +1,4 @@
-from .views import getHome, login_view, registerView, logout_view, set_local_language, my_profile_view, aboutUs, customerSupport, privacyPolicy, userAgreement
+from .views import getHome, login_view, registerView, logout_view, set_local_language, my_profile_view, aboutUs, customerSupport, privacyPolicy, userAgreement, contact
 from django.urls import path
 
 urlpatterns = [
@@ -7,6 +7,7 @@ urlpatterns = [
     path("login", login_view, name='login'),
     path("register", registerView, name='register'),
     path("about-us", aboutUs, name='about_us'),
+    path("contact", contact, name='contact'),
     path("customer-support", customerSupport, name='customer_support'),
     path("privacy-policy", privacyPolicy, name='privacy_policy'),
     path("user-agreement", userAgreement, name='user_agreement'),
