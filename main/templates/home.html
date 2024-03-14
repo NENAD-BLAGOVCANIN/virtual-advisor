@@ -6,21 +6,6 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}?rnd=2">
 
-
-<style>
-    .col-img-wrapper{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }#create-account-button{
-        padding-top: .7rem;
-        padding-bottom: .7rem;
-    }
-</style>
-
-
 {% if request.user.is_authenticated %}
 
 <div class="container py-5">
@@ -126,6 +111,46 @@
             </div>
         </div>
         
+    </div>
+
+</div>
+
+<div class="py-5 bg-gray">
+
+    <div class="container m-auto d-block" style="max-width: 1600px !important;">
+        <div class="rounded-lg bg-white p-5 w-100">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="w-100" style="max-width: 800px;">
+                        <h3 class="text-secondary">
+                            Subscribe to our Newsletter to stay informed of the latest news, insights and updates from ADVAISE. Join our community to receive exclusive content and special offers right in your inbox.
+                        </h3>
+            
+                        <p class="text-secondary pt-5 fw-500">Benefits of the Subscription: </p>
+
+                        <ul id="newsletter-benefits-list" style="list-style-type: disc; color: var(--color-primary) !important;">
+                            <li class="text-secondary pb-2">Be the first to know about product launches and updates.</li>
+                            <li class="text-secondary pb-2">Receive exclusive offers and promotions.</li>
+                            <li class="text-secondary pb-2">Stay connected with the IA Access community.</li>
+                            <li class="text-secondary pb-2">Subscribe now to unlock the power of AI with ADVAISE !</li>
+                        </ul>
+            
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <img src="/static/main/img/newsletter-section-img.png" alt="" class="img-fluid w-100 px-4 m-auto d-block" style="max-width: 300px;">
+                    <form action="">
+                        <label class="fw-500 pt-5">Sign up for our newsletter:</label>
+                        <input type="text" class="form-control my-2 w-100" placeholder="Your Email">
+                        <button class="btn btn-dark rounded-lg w-100">Sign up</button>
+                    </form>
+                </div>
+            </div>
+            
+
+        </div>
     </div>
 
 </div>
