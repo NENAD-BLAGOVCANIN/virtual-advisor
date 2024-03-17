@@ -19,13 +19,13 @@
                     </p>
 
                     <form action="">
-                        <label class="fw-500 ps-1">Sign up for our newsletter:</label>
+                        <label class="fw-500 ps-1">{{ "Sign up for our newsletter:"|translate:selectedLanguage }}</label>
                         <div class="d-flex align-items-center">
                             <div class="w-100">
                                 <input type="text" class="form-control my-2 w-100" placeholder="Your Email">
                             </div>
                             <div class="ps-1">
-                                <button class="btn btn-dark rounded-lg" style="width: max-content;">Sign up</button>
+                                <button class="btn btn-dark rounded-lg" style="width: max-content;">{{ "Sign up"|translate:selectedLanguage }}</button>
                             </div>
                         </div>
                         
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-4 mb-md-0 mb-4">
                     <div class="footer-links-block d-block m-auto">
-                        <p class="pb-2 fw-500 m-0">Users</p>
+                        <p class="pb-2 fw-500 m-0">{{ "Users"|translate:selectedLanguage }}</p>
                         <ul class="list-unstyled">
                             <li><a href="/register" class="py-2 d-block text-secondary text-decoration-none">
                                 {{ "Sign Up"|translate:selectedLanguage }}
