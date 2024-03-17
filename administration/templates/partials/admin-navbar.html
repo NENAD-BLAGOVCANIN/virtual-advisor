@@ -1,15 +1,23 @@
 {% load translation_filter %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3 px-3 border">
+<style>
+    .main-container{
+        padding-top: 87px !important;
+    }
+</style>
+
+<nav class="navbar position-fixed w-100 navbar-expand-lg navbar-light bg-white py-3 px-3 border">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav pe-2">
+
             <li class="nav-item d-flex align-items-center">
-                <a href="/">
+                <a href="/" class="pe-5 d-flex align-items-center text-decoration-none">
                     <img src="/static/main/img/logo.svg" id="logo-img" alt="">
+                    <span class="ps-3 text-dark"><b>ADVAISE</b></span>
                 </a>
             </li>
 
