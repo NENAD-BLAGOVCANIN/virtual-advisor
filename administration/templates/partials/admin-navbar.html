@@ -1,6 +1,6 @@
 {% load translation_filter %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3 px-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3 px-3 border">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,18 +21,11 @@
 
         </ul>
         <ul class="navbar-nav m-auto">
-
             <li class="nav-item">
                 <a class="nav-link {% if '/dashboard' in request.path %}active{% else %}{% endif %}" href="{% url 'admin.dashboard' %}">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if '/users' in request.path %}active{% else %}{% endif %}" href="{% url 'admin.users_view' %}">Users</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% if '/analytics' in request.path %}active{% else %}{% endif %}" href="#">Analytics</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% if '/messages' in request.path %}active{% else %}{% endif %}" href="#">Messages</a>
             </li>
         </ul>
         <ul class="navbar-nav">
