@@ -2,69 +2,52 @@
 {% load translation_filter %}
 
 {% block content %}
-<div class="container py-3 d-flex" style="max-width: 2500px !important; min-height: 100vh;">
-    <div class="row w-100">
-        <div class="col-md-6">
-            <div class="d-flex flex-row align-items-center justify-content-center h-100 pt-5">
-                <form action="#" method="POST" class="w-100" style="max-width: 550px;">{% csrf_token %}
-
-                    <img src="/static/main/img/logo.svg" style="max-height: 125px;" alt="">
-
-                    <h2 class="mt-5"><b>{{ "Welcome back"|translate:selectedLanguage }}</b></h2>
-                    <span class="text-muted small">{{ "Sign in to your account"|translate:selectedLanguage }}</span>
-                
-                    <div class="py-2">
-                        <input class="form-control rounded-lg py-2" name="email" type="text" placeholder="{{ 'Work Email'|translate:selectedLanguage }}">
-                    </div>
-                    <div class="py-2">
-                        <input class="form-control rounded-lg py-2" name="password" type="password" placeholder="{{ 'Password'|translate:selectedLanguage }}">
-                    </div>
-
-                    {% for field in login_form %}
-                    <p>
-                        {% for error in field.errors %}
-                    <p class="text-danger">
-                        {{ error }}
-                    </p>
-                    {% endfor %}
-                    </p>
-                    {% endfor %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         
-                    {% if login_form.non_field_errors %}
-                    <div class="text-danger">
-                        <p>{{login_form.non_field_errors}}</p>
-                    </div>
-                    {% endif %}
+    <div class="card border-0 shadow bg-white rounded-lg d-flex py-5 px-3 flex-row align-items-center justify-content-center pt-5" style="max-width: 800px;width: 100%">
+        <form action="#" method="POST" class="w-100 py-5" style="max-width: 550px;">{% csrf_token %}
+
+            <img src="/static/main/img/logo.svg" class="m-auto d-block" style="max-height: 125px;" alt="">
+
+            <h2 class="mt-5 text-center"><b>{{ "Welcome back"|translate:selectedLanguage }}</b></h2>
+            <span class="text-muted small d-block text-center m-auto">{{ "Sign in to your account"|translate:selectedLanguage }}</span>
         
-
-                    <div class="py-2">
-                        <button class="btn btn-primary-gradient rounded-lg fw-500 w-100"
-                            style="padding-top: .65rem;padding-bottom: .65rem;" type="submit">
-                            <span>{{ "Login"|translate:selectedLanguage }}</span>
-                        </button>
-                    </div>
-
-                    <span class="small">{{ "Don't have an account?"|translate:selectedLanguage }} <a href="/register"
-                            class="fw-500 text-dark">{{ "Start Today"|translate:selectedLanguage }}</a></span>
-
-                </form>
+            <div class="py-2 mt-4">
+                <input class="form-control rounded-lg py-2" name="email" type="text" placeholder="{{ 'Work Email'|translate:selectedLanguage }}">
+            </div>
+            <div class="py-2">
+                <input class="form-control rounded-lg py-2" name="password" type="password" placeholder="{{ 'Password'|translate:selectedLanguage }}">
             </div>
 
-        </div>
-        <div class="col-md-6 p-4 d-none d-md-block">
+            {% for field in login_form %}
+            <p>
+                {% for error in field.errors %}
+            <p class="text-danger">
+                {{ error }}
+            </p>
+            {% endfor %}
+            </p>
+            {% endfor %}
 
-            <div class="rounded-lg h-100 w-100 p-5 bg-primary-lighter">
+            {% if login_form.non_field_errors %}
+            <div class="text-danger">
+                <p>{{login_form.non_field_errors}}</p>
+            </div>
+            {% endif %}
 
-                <h2 class="p-4 bold">
-                    {{ "Secure AI-powered Knowledge Base Discovery for Corporates."|translate:selectedLanguage }}
-                </h2>
-                <div class="px-4 pt-5 pb-4">
-                    <img src="/static/main/img/auth-pages-illustration.svg" class="w-100" alt="">
-                </div>
 
+            <div class="py-2">
+                <button class="btn btn-primary-gradient rounded-lg fw-500 w-100"
+                    style="padding-top: .65rem;padding-bottom: .65rem;" type="submit">
+                    <span>{{ "Login"|translate:selectedLanguage }}</span>
+                </button>
             </div>
 
-        </div>
+            <span class="small m-auto text-center d-block pt-3">{{ "Don't have an account?"|translate:selectedLanguage }} <a href="/register"
+                    class="fw-500 text-dark">{{ "Start Today"|translate:selectedLanguage }}</a></span>
+
+        </form>
     </div>
+
 </div>
 {% endblock %}

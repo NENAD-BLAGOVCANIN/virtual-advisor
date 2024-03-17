@@ -16,102 +16,83 @@
     }
 </style>
 
-<div class="container py-3 d-flex" style="max-width: 2500px !important; min-height: 100vh;">
-    <div class="row w-100">
-        <div class="col-md-6">
-            <div class="d-flex flex-row align-items-center justify-content-center h-100 pt-5">
-                <form action="#" method="POST">{% csrf_token %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card border-0 shadow bg-white rounded-lg d-flex py-5 px-3 flex-row align-items-center justify-content-center pt-5" style="max-width: 800px;width: 100%">
+        <form action="#" method="POST" class="w-100 py-5" style="max-width: 550px;">{% csrf_token %}
 
-                    <img src="/static/main/img/logo.svg" style="max-height: 125px;" alt="">
+            <img src="/static/main/img/logo.svg" class="m-auto d-block" style="max-height: 125px;" alt="">
 
-                    <h2 class="mt-5"><b>{{ "Create your account"|translate:selectedLanguage }}</b></h2>
-                    <span class="text-muted small">{{ "Enter your details to sign up"|translate:selectedLanguage }}</span>
-                    <div class="row pt-3">
-                        <div class="col-md-6">
-                            <div class="py-2">
-                                <input class="form-control rounded-lg py-2" name="first_name" type="text"
-                                    placeholder="First Name">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="py-2">
-                                <input class="form-control rounded-lg py-2" name="last_name" type="text"
-                                    placeholder="Last Name">
-                            </div>
-                        </div>
-                    </div>
-
+            <h2 class="mt-5 text-center"><b>{{ "Create your account"|translate:selectedLanguage }}</b></h2>
+            <span class="text-muted small d-block text-center m-auto">{{ "Enter your details to sign up"|translate:selectedLanguage }}</span>
+            <div class="row pt-3">
+                <div class="col-md-6">
                     <div class="py-2">
-                        <input class="form-control rounded-lg py-2" name="email" type="text" placeholder="{{ 'Work Email'|translate:selectedLanguage }}">
-                        <div id="error-note" class="text-danger small pt-2" style="display: none"></div>
+                        <input class="form-control rounded-lg py-2" name="first_name" type="text"
+                            placeholder="First Name">
                     </div>
-                    <div class="py-2">
-                        <input class="form-control py-2 small" id="phone-number-input" name="phone_number"
-                            type="text" placeholder="{{ 'Phone Number'|translate:selectedLanguage }}">
-                    </div>
-                    <div class="py-2">
-                        <input class="form-control rounded-lg py-2" name="password1" type="password"
-                            placeholder="{{ 'Password'|translate:selectedLanguage }}">
-                    </div>
-                    <div class="py-2">
-                        <input class="form-control rounded-lg py-2" name="password2" type="password"
-                            placeholder="{{ 'Confirm Password'|translate:selectedLanguage }}">
-                    </div>
-
-                    <div class="py-2">
-                        <span class="small text-muted">
-                            {{ "By signing up, you agree to our Terms, Policy and GDPR"|translate:selectedLanguage }}
-                        </span>
-                    </div>
-
-                    {% for field in registration_form %}
-                    <p>
-                        {% for error in field.errors %}
-                    <p class="text-danger">
-                        {{ error }}
-                    </p>
-                    {% endfor %}
-                    </p>
-                    {% endfor %}
-
-                    {% if registration_form.non_field_errors %}
-                    <div class="text-danger">
-                        <p>{{registration_form.non_field_errors}}</p>
-                    </div>
-                    {% endif %}
-
-                    <div class="py-2">
-                        <button class="btn btn-primary-gradient rounded-lg fw-500 w-100"
-                            style="padding-top: .65rem;padding-bottom: .65rem;" type="submit">
-                            <span>
-                                {{ "Create your free account"|translate:selectedLanguage }}
-                            </span>
-                        </button>
-                    </div>
-
-                    <span class="small">{{ "Already have an account?"|translate:selectedLanguage }} <a href="/login" class="fw-500 text-dark">
-                        {{ "Sign in"|translate:selectedLanguage }}
-                        </a>
-                    </span>
-
-                </form>
-            </div>
-
-        </div>
-        <div class="col-md-6 p-4 d-none d-md-block">
-
-            <div class="rounded-lg h-100 w-100 p-5 bg-primary-lighter">
-
-                <h2 class="p-4 bold">
-                    {{ "Sign up for Free to get access to our advanced High Power AI tools."|translate:selectedLanguage }}
-                </h2>
-                <div class="px-4 pt-5 pb-4">
-                    <img src="/static/main/img/auth-pages-illustration.svg" class="w-100" alt="">
                 </div>
-
+                <div class="col-md-6">
+                    <div class="py-2">
+                        <input class="form-control rounded-lg py-2" name="last_name" type="text"
+                            placeholder="Last Name">
+                    </div>
+                </div>
             </div>
 
-        </div>
+            <div class="py-2">
+                <input class="form-control rounded-lg py-2" name="email" type="text" placeholder="{{ 'Work Email'|translate:selectedLanguage }}">
+                <div id="error-note" class="text-danger small pt-2" style="display: none"></div>
+            </div>
+            <div class="py-2">
+                <input class="form-control py-2 small" id="phone-number-input" name="phone_number"
+                    type="text" placeholder="{{ 'Phone Number'|translate:selectedLanguage }}">
+            </div>
+            <div class="py-2">
+                <input class="form-control rounded-lg py-2" name="password1" type="password"
+                    placeholder="{{ 'Password'|translate:selectedLanguage }}">
+            </div>
+            <div class="py-2">
+                <input class="form-control rounded-lg py-2" name="password2" type="password"
+                    placeholder="{{ 'Confirm Password'|translate:selectedLanguage }}">
+            </div>
+
+            <div class="py-2">
+                <span class="small text-muted">
+                    {{ "By signing up, you agree to our Terms, Policy and GDPR"|translate:selectedLanguage }}
+                </span>
+            </div>
+
+            {% for field in registration_form %}
+            <p>
+                {% for error in field.errors %}
+            <p class="text-danger">
+                {{ error }}
+            </p>
+            {% endfor %}
+            </p>
+            {% endfor %}
+
+            {% if registration_form.non_field_errors %}
+            <div class="text-danger">
+                <p>{{registration_form.non_field_errors}}</p>
+            </div>
+            {% endif %}
+
+            <div class="py-2">
+                <button class="btn btn-primary-gradient rounded-lg fw-500 w-100"
+                    style="padding-top: .65rem;padding-bottom: .65rem;" type="submit">
+                    <span>
+                        {{ "Create your free account"|translate:selectedLanguage }}
+                    </span>
+                </button>
+            </div>
+
+            <span class="small m-auto text-center d-block">{{ "Already have an account?"|translate:selectedLanguage }} <a href="/login" class="fw-500 text-dark">
+                {{ "Sign in"|translate:selectedLanguage }}
+                </a>
+            </span>
+
+        </form>
     </div>
 </div>
 

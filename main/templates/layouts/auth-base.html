@@ -13,7 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
+
+    <style>
+        body::before {
+            content: "";
+            background: url(/static/main/img/background.png);
+            opacity: 0.15;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 100% !important;
+            background-size: cover;
+            top: 0;
+            left: 0%;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    </style>
+
 </head>
 
 <body>
