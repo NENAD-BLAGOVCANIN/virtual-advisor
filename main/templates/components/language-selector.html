@@ -9,7 +9,7 @@
     <div class="dropdown-menu bg-app shadow rounded-lg border-0 p-3 countrySelector"
         aria-labelledby="countrySelector" style="right: 0;">
 
-        <span class="dropdown-item"><b>Select country/language</b></span>
+        <span class="dropdown-item"><b>{{ "Select country/language"|translate:selectedLanguage }}</b></span>
 
         <form class="language-form" action="{% url 'set_local_language' %}" method="post">        
             {% csrf_token %}
