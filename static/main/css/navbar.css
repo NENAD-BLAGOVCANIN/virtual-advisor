@@ -43,7 +43,7 @@
     }
 }
 
-@media only screen and (max-width: 386px) {
+@media only screen and (max-width: 424px) {
     #login-link{
         display: none;
     }
