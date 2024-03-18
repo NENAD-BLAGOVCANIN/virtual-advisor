@@ -37,12 +37,12 @@
             <table class="table-responsive mt-3 w-100">
                 <thead>
                     <tr>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Work Email</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Access</th>
+                        <th scope="col">{{ 'First Name'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Last Name'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Username'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Work Email'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Role'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Access'|translate:selectedLanguage }}</th>
 
                     </tr>
                 </thead>
@@ -57,9 +57,9 @@
                         <td>{{ user.email }}</td>
                         <td>
                             {% if user.is_admin %}
-                            <span class="badge bg-danger">Admin</span>
+                            <span class="badge bg-danger">{{ 'Admin'|translate:selectedLanguage }}</span>
                             {% else %}
-                            <span class="badge bg-success">Customer</span>
+                            <span class="badge bg-success">{{ 'Customer'|translate:selectedLanguage }}</span>
                             {% endif %}
                         </td>
                         <td>
@@ -88,7 +88,7 @@
                 </tbody>
             </table>
             {% else %}
-            <span class="text-center m-auto d-block">No new users</span>
+            <span class="text-center m-auto d-block">{{ 'No new users'|translate:selectedLanguage }}</span>
             {% endif %}
         </div>
     </div>
@@ -101,12 +101,12 @@
             <table class="table-responsive mt-3 w-100">
                 <thead>
                     <tr>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Work Email</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Access</th>
+                        <th scope="col">{{ 'First Name'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Last Name'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Username'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Work Email'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Role'|translate:selectedLanguage }}</th>
+                        <th scope="col">{{ 'Access'|translate:selectedLanguage }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -120,16 +120,16 @@
                         <td>{{ user.email }}</td>
                         <td>
                             {% if user.is_admin %}
-                            <span class="badge bg-danger">Admin</span>
+                            <span class="badge bg-danger">{{ 'Admin'|translate:selectedLanguage }}</span>
                             {% else %}
-                            <span class="badge bg-success">Customer</span>
+                            <span class="badge bg-success">{{ 'Customer'|translate:selectedLanguage }}</span>
                             {% endif %}
                         </td>
                         <td>
                             {% if user.application_access == 'allowed' %}
-                            <span class="badge bg-success">Allowed</span>
+                            <span class="badge bg-success">{{ 'Allowed'|translate:selectedLanguage }}</span>
                             {% else %}
-                            <span class="badge bg-danger">Declined</span>
+                            <span class="badge bg-danger">{{ 'Declined'|translate:selectedLanguage }}</span>
                             {% endif %}
                         </td>
 
@@ -139,7 +139,7 @@
                 </tbody>
             </table>
             {% else %}
-            <span class="text-center m-auto d-block">No users have access asigned</span>
+            <span class="text-center m-auto d-block">{{ 'No users have access asigned'|translate:selectedLanguage }}</span>
             {% endif %}
         </div>
     </div>

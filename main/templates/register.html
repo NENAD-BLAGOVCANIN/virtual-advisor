@@ -111,7 +111,7 @@
             });
 
             if (containsForbiddenDomain) {
-                $('#error-note').text('Please enter a work email address only.').show();
+                $('#error-note').text('{{ "Please enter a work email address only."|translate:selectedLanguage }}').show();
             } else {
                 $('#error-note').hide();
             }
