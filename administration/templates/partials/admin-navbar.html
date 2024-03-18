@@ -30,10 +30,10 @@
         </ul>
         <ul class="navbar-nav m-auto">
             <li class="nav-item">
-                <a class="nav-link {% if '/dashboard' in request.path %}active{% else %}{% endif %}" href="{% url 'admin.dashboard' %}">Dashboard</a>
+                <a class="nav-link {% if '/dashboard' in request.path %}active{% else %}{% endif %}" href="{% url 'admin.dashboard' %}">{{ "Dashboard"|translate:selectedLanguage }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% if '/users' in request.path %}active{% else %}{% endif %}" href="{% url 'admin.users_view' %}">Users</a>
+                <a class="nav-link {% if '/users' in request.path %}active{% else %}{% endif %}" href="{% url 'admin.users_view' %}">{{ "Users"|translate:selectedLanguage }}</a>
             </li>
         </ul>
         <ul class="navbar-nav">
@@ -49,15 +49,15 @@
                             {{ request.user.email|slice:":18" }}
                         </span>
                         {% if request.user.is_admin %}
-                        <a class="dropdown-item py-2" href="/administration/dashboard">Dashboard</a>
+                        <a class="dropdown-item py-2" href="/administration/dashboard">{{ "Dashboard"|translate:selectedLanguage }}</a>
                         {% endif %}
-                        <a class="dropdown-item py-2" href="/logout">Logout</a>
+                        <a class="dropdown-item py-2" href="/logout">{{ "Logout"|translate:selectedLanguage }}</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
                 <a href="/profile">
-                    <a href="/" class="btn btn-primary bg-white rounded px-3"><i class="fa-solid fa-arrow-rotate-left pe-1"></i> Return Home</a>
+                    <a href="/" class="btn btn-primary bg-white rounded px-3"><i class="fa-solid fa-arrow-rotate-left pe-1"></i> {{ "Return Home"|translate:selectedLanguage }}</a>
                 </a>
             </li>
         </ul>

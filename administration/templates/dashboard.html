@@ -196,7 +196,7 @@
 <script src="https://unpkg.com/chartjs-chart-geo"></script>
 
 <script>
-    var xValues = ["Admins", "Customers"];
+    var xValues = ['{{ "Admins"|translate:selectedLanguage }}', '{{ "Customers"|translate:selectedLanguage }}'];
     var yValues = ['{{ admin_count }}', '{{ customer_count }}'];
     var barColors = [
       "#b91d47",
@@ -229,7 +229,7 @@
         data: {
             labels: {{ userGrowthData.labels | safe }},
         datasets: [{
-            label: 'Number of users',
+            label: '{{ "Number of users"|translate:selectedLanguage }}',
             backgroundColor: "#58a2e396",
             borderColor: "#58A2E3",
             fill: true,
