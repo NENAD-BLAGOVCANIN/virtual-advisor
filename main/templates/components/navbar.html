@@ -58,7 +58,7 @@
                         <img src="/static/main/img/profile.svg" id="navbar-user-icon" alt="">
                     </button>
                     <div class="dropdown-menu py-3 px-4 border-0 shadow rounded" aria-labelledby="dropdownMenuButton">
-                        <span class="d-block m-auto text-center small fw-500">Hello, {{ request.user.first_name|slice:":10" }}</span>
+                        <span class="d-block m-auto text-center small fw-500">{{ "Hello,"|translate:selectedLanguage }} {{ request.user.first_name|slice:":10" }}</span>
                         <span class="text-muted d-block m-auto mb-4 text-center small">
                             {{ request.user.email|slice:":18" }}
                         </span>

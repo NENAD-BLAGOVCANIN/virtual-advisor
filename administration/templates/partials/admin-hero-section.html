@@ -6,7 +6,7 @@
         <img src="/static/main/img/profile.svg" class="rounded-circle border" style="object-fit: cover; height: 55px; width: 55px;" />
     </div>
     <div class="ps-3">
-        <h4 class="fw-500 mb-1">Hello, {{ request.user.first_name }}</h4>
+        <h4 class="fw-500 mb-1">{{ "Hello,"|translate:selectedLanguage }} {{ request.user.first_name }}</h4>
         <span class="text-muted">{{ current_date|date:"l d, F Y" }}</span>
     </div>
     
